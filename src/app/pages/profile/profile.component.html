@@ -1,0 +1,55 @@
+<mat-card>
+    <mat-card-title>Profile Details </mat-card-title>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img src="../../../assets/user-picture.png" height="200px" width="200px"
+                        style="border-radius: 50%; border: 2px solid black;">
+                    <h1 class="mt20">Jitendra kadu</h1>
+                </div>
+
+                <!-- {{user |  json}} -->
+                <div class="row">
+
+                    <div class="container text-center">
+                        <div class="col-md-10 offset-md-1">
+                            <table class="table">
+                                <tr>
+                                    <td>UserName</td>
+                                    <td>{{user.username}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>UserId</td>
+                                    <td>001</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Phone </td>
+                                    <td>{{user.phoneNo}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Role</td>
+                                    <td>{{user.authorities[0].authority}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Status</td>
+                                    <td>{{user.enabled ? 'Active' : 'Inactive'}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary">Save</button>
+        <button mat-raised-button color="accent" style="margin-left: 10px;">Edit Details</button>
+    </mat-card-actions>
+
+</mat-card>

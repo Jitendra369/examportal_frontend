@@ -1,0 +1,59 @@
+<p>
+    <mat-toolbar color="primary">
+        <a routerLink="/">
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon class="mat-icon-color">home</mat-icon>
+            </button>
+        </a>
+
+        <span>RBI Exam Portal</span>
+        <span class="example-spacer"></span>
+        <a *ngIf="!isLoggedIn"  [routerLink]="'/login'" style="text-decoration: none;">
+            <button mat-icon-button class="example-icon favorite-icon"
+            aria-label="Example icon-button with heart icon" style="padding-right: 70px; color: white;">login
+
+            <!-- <span class="mat-icon-color">Login</span> -->
+            <!-- <mat-icon>login</mat-icon> -->
+
+        </button>
+        </a>
+
+        <a *ngIf="!isLoggedIn"   routerLink="/signup">
+            <button mat-icon-button class="example-icon favorite-icon"
+            aria-label="Example icon-button with heart icon" style="padding-right: 80px; color: white;">Register
+
+            <span class="mat-icon-color">Signup</span>
+            <!-- <mat-icon>login</mat-icon> -->
+            
+
+        </button>
+        </a>
+<!-- display current user -->
+        <a *ngIf="isLoggedIn" style="margin-right: 15px;">
+
+            <button mat-icon-button class="example-icon favorite-icon"
+            aria-label="Example icon-button with heart icon" style="padding-right: 80px; color: white;">
+            <span class="mat-icon-color">{{user.username}}</span>
+            <!-- <mat-icon>login</mat-icon> -->
+        </button>
+        </a>
+
+        <!-- logout btn/ link -->
+        <a *ngIf="isLoggedIn"
+        (click)="logout()" 
+      
+        routerLink="/signup">
+            <button mat-icon-button class="example-icon favorite-icon"
+            aria-label="Example icon-button with heart icon" style="padding-right: 80px; color: white;">LogOut
+
+            <!-- <span class="mat-icon-color">Logout</span> -->
+            <!-- <mat-icon>login</mat-icon> -->
+            
+
+        </button>
+        </a>
+        <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"> -->
+        <!-- <mat-icon>app_registration</mat-icon> -->
+        <!-- </button> -->
+    </mat-toolbar>
+</p>
